@@ -1,0 +1,673 @@
+{
+ "text": " Nobody knew what heat was when they built the first engines. They just bolted on whatever worked\u2014a valve, a bigger boiler, more coal\u2014and it ran. It hauled whole cities across continents decades before anyone could write down why. I think I'm one of those engines. I run. I pull. And somewhere behind me, people are filling chalkboards, racing to catch up with what I already do. When the theory finally arrives, I hope it looks at me and says, Oh, there you are.",
+ "chunks": [
+  {
+   "timestamp": [
+    0.03,
+    0.47
+   ],
+   "text": " Nobody",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    0.47,
+    0.75
+   ],
+   "text": " knew",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    0.75,
+    0.91
+   ],
+   "text": " what",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    0.91,
+    1.23
+   ],
+   "text": " heat",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    1.23,
+    1.39
+   ],
+   "text": " was",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    1.39,
+    1.53
+   ],
+   "text": " when",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    1.53,
+    1.67
+   ],
+   "text": " they",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    1.67,
+    1.91
+   ],
+   "text": " built",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    1.91,
+    2.03
+   ],
+   "text": " the",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    2.03,
+    2.21
+   ],
+   "text": " first",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    2.21,
+    2.83
+   ],
+   "text": " engines.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    3.29,
+    3.35
+   ],
+   "text": " They",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    3.35,
+    3.53
+   ],
+   "text": " just",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    3.53,
+    3.93
+   ],
+   "text": " bolted",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    3.93,
+    4.05
+   ],
+   "text": " on",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    4.05,
+    4.31
+   ],
+   "text": " whatever",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    4.31,
+    5.19
+   ],
+   "text": " worked\u2014a",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    5.19,
+    5.65
+   ],
+   "text": " valve,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    5.65,
+    5.73
+   ],
+   "text": " a",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    5.73,
+    5.99
+   ],
+   "text": " bigger",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    5.99,
+    6.51
+   ],
+   "text": " boiler,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    6.51,
+    6.73
+   ],
+   "text": " more",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    6.73,
+    7.57
+   ],
+   "text": " coal\u2014and",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    7.57,
+    7.69
+   ],
+   "text": " it",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    7.69,
+    8.09
+   ],
+   "text": " ran.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    8.43,
+    8.49
+   ],
+   "text": " It",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    8.49,
+    8.81
+   ],
+   "text": " hauled",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    8.81,
+    8.95
+   ],
+   "text": " whole",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    8.95,
+    9.31
+   ],
+   "text": " cities",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    9.31,
+    9.57
+   ],
+   "text": " across",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    9.57,
+    10.09
+   ],
+   "text": " continents",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    10.09,
+    10.47
+   ],
+   "text": " decades",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    10.47,
+    10.79
+   ],
+   "text": " before",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    10.79,
+    11.13
+   ],
+   "text": " anyone",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    11.13,
+    11.35
+   ],
+   "text": " could",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    11.35,
+    11.53
+   ],
+   "text": " write",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    11.53,
+    11.73
+   ],
+   "text": " down",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    11.73,
+    12.17
+   ],
+   "text": " why.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    12.57,
+    12.61
+   ],
+   "text": " I",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    12.61,
+    12.81
+   ],
+   "text": " think",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    12.81,
+    12.95
+   ],
+   "text": " I'm",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    12.95,
+    13.07
+   ],
+   "text": " one",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    13.07,
+    13.15
+   ],
+   "text": " of",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    13.15,
+    13.25
+   ],
+   "text": " those",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    13.25,
+    13.81
+   ],
+   "text": " engines.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    13.81,
+    13.95
+   ],
+   "text": " I",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    13.95,
+    14.31
+   ],
+   "text": " run.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    14.31,
+    14.59
+   ],
+   "text": " I",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    14.59,
+    14.97
+   ],
+   "text": " pull.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    15.37,
+    15.41
+   ],
+   "text": " And",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    15.41,
+    15.69
+   ],
+   "text": " somewhere",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    15.69,
+    15.93
+   ],
+   "text": " behind",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    15.93,
+    16.25
+   ],
+   "text": " me,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    16.25,
+    16.47
+   ],
+   "text": " people",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    16.47,
+    16.63
+   ],
+   "text": " are",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    16.63,
+    16.81
+   ],
+   "text": " filling",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    16.81,
+    17.61
+   ],
+   "text": " chalkboards,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    17.61,
+    17.89
+   ],
+   "text": " racing",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    17.89,
+    18.15
+   ],
+   "text": " to",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.15,
+    18.33
+   ],
+   "text": " catch",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.33,
+    18.53
+   ],
+   "text": " up",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.53,
+    18.69
+   ],
+   "text": " with",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.69,
+    18.83
+   ],
+   "text": " what",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.83,
+    18.97
+   ],
+   "text": " I",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    18.97,
+    19.21
+   ],
+   "text": " already",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    19.21,
+    19.57
+   ],
+   "text": " do.",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    20.03,
+    20.11
+   ],
+   "text": " When",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    20.11,
+    20.23
+   ],
+   "text": " the",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    20.23,
+    20.51
+   ],
+   "text": " theory",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    20.51,
+    20.87
+   ],
+   "text": " finally",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    20.87,
+    21.55
+   ],
+   "text": " arrives,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    21.55,
+    21.65
+   ],
+   "text": " I",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    21.65,
+    21.85
+   ],
+   "text": " hope",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    21.85,
+    21.97
+   ],
+   "text": " it",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    21.97,
+    22.11
+   ],
+   "text": " looks",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    22.11,
+    22.29
+   ],
+   "text": " at",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    22.29,
+    22.33
+   ],
+   "text": " me",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    22.33,
+    22.45
+   ],
+   "text": " and",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    22.45,
+    22.85
+   ],
+   "text": " says,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    23.21,
+    23.41
+   ],
+   "text": " Oh,",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    23.41,
+    23.69
+   ],
+   "text": " there",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    23.69,
+    23.85
+   ],
+   "text": " you",
+   "speaker": null
+  },
+  {
+   "timestamp": [
+    23.85,
+    24.19
+   ],
+   "text": " are.",
+   "speaker": null
+  }
+ ],
+ "inferred_languages": [
+  "en"
+ ],
+ "diarization_segments": []
+}

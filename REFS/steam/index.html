@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steam</title>
+<style>
+  :root { --bg: #17130f; --fg: #fbf3df; --dim: #a89b84; --gold: #e2451f; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: Tahoma, Verdana, system-ui, sans-serif; overflow: hidden; }
+  #stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; }
+  #wrap { position: relative; }
+  canvas { display: block; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: #17130f; }
+  #overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; cursor: pointer;
+    background: radial-gradient(circle at 50% 50%, rgba(23,19,15,.2), rgba(23,19,15,.65)); border-radius: 6px; transition: opacity .4s; }
+  #overlay.hidden { opacity: 0; pointer-events: none; }
+  #play { width: 96px; height: 96px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; box-shadow: 0 0 60px rgba(226,69,31,.5); transition: transform .2s; }
+  #overlay:hover #play { transform: scale(1.07); }
+  #play svg { margin-left: 8px; }
+  #hint { font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--fg); opacity: .8; }
+  #bar { display: flex; align-items: center; gap: 12px; width: 100%; opacity: .55; transition: opacity .3s; }
+  #bar:hover { opacity: 1; }
+  #bar button { background: none; border: 0; color: var(--fg); font: 600 13px Tahoma, Verdana, sans-serif; cursor: pointer; padding: 4px 6px; letter-spacing: .05em; }
+  #scrub { flex: 1; accent-color: var(--gold); }
+  #tc { font: 500 12px ui-monospace, Menlo, monospace; color: var(--dim); min-width: 92px; text-align: right; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="wrap">
+    <canvas id="cv"></canvas>
+    <div id="overlay"><div id="play"><svg width="38" height="44" viewBox="0 0 38 44"><path d="M0 0 L38 22 L0 44 Z" fill="#fff4e2"/></svg></div><div id="hint">Sound on · click to play</div></div>
+  </div>
+  <div id="bar"><button id="pp">PLAY</button><input id="scrub" type="range" min="0" max="1000" value="0"><span id="tc">0:00.0</span></div>
+</div>
+<script src="kit.js?v=2"></script>
+<script src="film.js?v=2"></script>
+<script src="audio-kit.js?v=2"></script>
+<script src="score.js?v=2"></script>
+<script>
+(async () => {
+  const q = new URLSearchParams(location.search);
+  const words = await fetch('words.json', { cache: 'no-store' }).then(r => r.json());
+  initFilm(words);
+
+  // ---- review modes: ?t=12.3  |  ?sheet=from,to,step,cols
+  if (q.has('sheet') || q.has('t')) {
+    document.getElementById('stage').remove();
+    const off = document.createElement('canvas'); off.width = off.height = SIZE;
+    const octx = off.getContext('2d');
+    if (q.has('t')) {
+      const c = document.createElement('canvas'); c.width = c.height = SIZE; document.body.appendChild(c);
+      render(c.getContext('2d'), parseFloat(q.get('t')));
+    } else {
+      const [a, b, step, cols] = q.get('sheet').split(',').map(Number);
+      const ts = []; for (let t = a; t <= b + 1e-6; t += step) ts.push(+t.toFixed(3));
+      const tile = Math.floor(1440 / cols), rows = Math.ceil(ts.length / cols);
+      const c = document.createElement('canvas'); c.width = tile * cols; c.height = tile * rows; document.body.appendChild(c);
+      const g = c.getContext('2d'); g.fillStyle = '#000'; g.fillRect(0, 0, c.width, c.height);
+      ts.forEach((t, i) => {
+        render(octx, t);
+        const x = (i % cols) * tile, y = Math.floor(i / cols) * tile;
+        g.drawImage(off, x + 1, y + 1, tile - 2, tile - 2);
+        g.font = '600 16px Menlo, monospace'; g.fillStyle = 'rgba(0,0,0,.65)'; g.fillRect(x + 4, y + 4, 62, 22);
+        g.fillStyle = '#e2451f'; g.fillText(t.toFixed(2), x + 9, y + 21);
+      });
+    }
+    document.title = 'ready';
+    return;
+  }
+
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  const overlay = document.getElementById('overlay'), pp = document.getElementById('pp');
+  const scrub = document.getElementById('scrub'), tc = document.getElementById('tc');
+  const wrap = document.getElementById('wrap'), bar = document.getElementById('bar');
+  function fit() {
+    const s = Math.floor(Math.min(innerWidth - 32, innerHeight - 32 - 40));
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.style.width = cv.style.height = s + 'px'; wrap.style.width = s + 'px'; bar.style.width = s + 'px';
+    cv.width = cv.height = Math.round(s * dpr);
+    ctx.__scale = (s * dpr) / SIZE;
+    draw();
+  }
+  const audio = new FilmAudio();
+  const ready = audio.init('voice.wav');
+  let playing = false, tHead = POSTER_T, ended = false;
+  const fmt = t => { const s = Math.max(0, t - FILM.start); return `${Math.floor(s / 60)}:${(s % 60).toFixed(1).padStart(4, '0')}`; };
+  function draw() { try { render(ctx, tHead); } catch (e) { console.error('frame', tHead.toFixed(3), e); } }
+  async function play(from) {
+    await ready;
+    if (audio.ctx.state !== 'running') await audio.ctx.resume();
+    if (from == null || from >= FILM.end - 0.05) from = FILM.start;
+    audio.play(from); playing = true; ended = false;
+    overlay.classList.add('hidden'); pp.textContent = 'PAUSE';
+  }
+  function pause() { audio.stop(); playing = false; pp.textContent = 'PLAY'; }
+  overlay.addEventListener('click', () => play(ended || tHead === POSTER_T ? FILM.start : tHead));
+  pp.addEventListener('click', () => (playing ? pause() : play(tHead)));
+  scrub.addEventListener('input', () => {
+    tHead = FILM.start + (scrub.value / 1000) * (FILM.end - FILM.start);
+    overlay.classList.add('hidden');
+    if (playing) audio.play(tHead); else draw();
+  });
+  addEventListener('keydown', e => {
+    if (e.code === 'Space') { e.preventDefault(); playing ? pause() : play(tHead); }
+    if (e.key === 'r' || e.key === 'R') play(FILM.start);
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { tHead = Math.max(FILM.start, Math.min(FILM.end, tHead + (e.key === 'ArrowRight' ? 2 : -2))); if (playing) audio.play(tHead); else draw(); }
+  });
+  function frame() {
+    if (playing) {
+      tHead = audio.time();
+      if (tHead >= FILM.end) { tHead = FILM.end; pause(); ended = true; overlay.classList.remove('hidden'); document.getElementById('hint').textContent = 'Play again'; }
+      draw();
+    }
+    scrub.value = Math.round(((tHead - FILM.start) / (FILM.end - FILM.start)) * 1000);
+    tc.textContent = `${fmt(tHead)} / ${fmt(FILM.end)}`;
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize', fit);
+  fit(); frame();
+})();
+</script>
+</body>
+</html>
