@@ -1,10 +1,8 @@
 {
-  "about": "Reference films for the bassline skill, ranked by the user's verdict. Study the best first; treat the caveats as things not to repeat.",
+  "about": "Reference film for the bassline skill. Study it first; treat the caveats as things not to repeat.",
   "films": [
     {
       "folder": "riverbed",
-      "rank": 1,
-      "verdict": "best of the three",
       "user_said": "very wonderful work, I am very impressed",
       "length_s": 27.5,
       "voice": "af_heart x1.0",
@@ -19,45 +17,6 @@
       ],
       "caveats": [
         "Calm, contemplative pace; a good model for feeling, less so for energy"
-      ]
-    },
-    {
-      "folder": "steam",
-      "rank": 2,
-      "verdict": "decent",
-      "length_s": 28.5,
-      "voice": "af_heart x1.05",
-      "made_by": "Claude in the main thread; script inspired by a roon (@tszzl) post about pretraining being like building steam engines before thermodynamics",
-      "c10_commit": "e4efa0e",
-      "what_works": [
-        "Built for energy: short-short-BANG script, workshop rhythm that accelerates, a beat of silence before 'ran', band slams in",
-        "Full-frame hits on 'I run.' and 'I pull.' with brass stabs",
-        "Chalk theory arrives slightly wrong and snaps exactly onto the engine on 'oh.'"
-      ],
-      "caveats": [
-        "Reads more like a sequence of good gags than one continuous transformation; the engine carries through but the acts don't morph into each other the way Riverbed's do",
-        "Characters and the race are small in frame for stretches",
-        "Sound mix never checked by ear"
-      ]
-    },
-    {
-      "folder": "saddle",
-      "rank": 3,
-      "verdict": "decent narration, pretty good visuals, but lacked oomph",
-      "length_s": 29.6,
-      "voice": "af_heart x1.0",
-      "made_by": "A fresh subagent using only the skill (a cold test of SKILL.md); script inspired by a roon post about saddle points in high-dimensional loss landscapes",
-      "c10_commit": "5909a69",
-      "what_works": [
-        "Clever concept true to its source (gradient descent: valleys are really saddles)",
-        "Contour-map unfold and the stepped-hill callback ending"
-      ],
-      "caveats": [
-        "Not enough energy: the narration is a calm explanation of standing still, and the subject (being parked) works against momentum",
-        "The narrator (a blue paper ball) is too small for most of the film",
-        "The saddle drawing is hard to read; the torn front view reads as a brown lump",
-        "Sparse opening",
-        "Explains an idea rather than driving one; avoid lecture-shaped scripts"
       ]
     }
   ]

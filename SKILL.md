@@ -5,7 +5,7 @@ description: Makes a short narrated square film in a cut-paper motion-graphics s
 
 # bassline
 
-A 20–40 s film from one or two paragraphs of text. It is drawn in code and plays in the browser, with no MP4 export unless someone asks. `REFS/` holds three finished films, and `REFS/index.json` ranks them with what works and what not to repeat. Riverbed is the best of them. Read the index, then watch Riverbed and read its `NOTES.md`, before starting a new one.
+A 20–40 s film from one or two paragraphs of text. It is drawn in code and plays in the browser, with no MP4 export unless someone asks. `REFS/riverbed/` holds the reference film, and `REFS/index.json` lists what works in it and what not to repeat. Read the index, then watch Riverbed and read its `NOTES.md`, before starting a new one.
 
 ## What makes it good
 
