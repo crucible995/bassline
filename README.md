@@ -8,7 +8,7 @@ A Claude Code skill that makes short narrated square films in a cut-paper style 
 git clone <this repo> ~/.claude/skills/bassline
 ```
 
-Then ask Claude Code for "a bassline film about …". `SKILL.md` is what Claude reads; `REFS/riverbed/` is the reference film (serve that folder with `python3 -m http.server` and open `index.html` to watch it).
+Then ask Claude Code for "a bassline film about …". `SKILL.md` is what Claude reads; `REF/riverbed/` is the reference film (serve that folder with `python3 -m http.server` and open `index.html` to watch it).
 
 ## Needs
 
