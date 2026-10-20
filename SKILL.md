@@ -1,6 +1,6 @@
 ---
 name: bassline
-description: Makes a short narrated square film in a cut-paper motion-graphics style. It borrows from Saul Bass (flat colour fields, scissor-cut shapes, hard cuts) and Norman McLaren (lines that boil and turn into other things). The film is coded in Canvas2D, voiced with Kokoro, and every move lands on a spoken word. It plays in the browser with an eggshell caption box in the top left. Use when someone wants a video, animation or motion graphic made from a short poetic or philosophical text, asks for "the Riverbed style", "cut paper", "Saul Bass", "McLaren" or "bassline", or asks Claude to write its own script and animate it.
+description: Makes a short narrated square film in a cut-paper motion-graphics style. It borrows from Saul Bass (flat colour fields, scissor-cut shapes, hard cuts) and Norman McLaren (lines that boil and turn into other things). The film is coded in Canvas2D, voiced with ElevenLabs v4 (George) or Kokoro, and every move lands on a spoken word. It plays in the browser with an eggshell caption box in the top left. Use when someone wants a video, animation or motion graphic made from a short poetic or philosophical text, asks for "the Riverbed style", "cut paper", "Saul Bass", "McLaren" or "bassline", or asks Claude to write its own script and animate it.
 ---
 
 # bassline
