@@ -4,8 +4,14 @@
 //   node check.cjs <port> t 12.3 out.png        one frame at full size
 //   node check.cjs <port> play out.png          click play, wait 9 s, check the clock advanced (~0:08)
 const path = require('path');
-const PW = process.env.PLAYWRIGHT || '/Users/cobalt/Desktop/C10/tools/node_modules/playwright';
-const { chromium } = require(PW);
+// Playwright: $PLAYWRIGHT if set, else a normal install (`npm i playwright && npx playwright install chromium`).
+function loadPW() {
+  for (const p of [process.env.PLAYWRIGHT, 'playwright', path.join(require('os').homedir(), 'Desktop/C10/tools/node_modules/playwright')]) {
+    if (!p) continue; try { return require(p); } catch (e) {}
+  }
+  throw new Error('playwright not found: npm i playwright, or set PLAYWRIGHT to its path');
+}
+const { chromium } = loadPW();
 (async () => {
   const [, , port, mode, arg, out] = process.argv;
   const base = `http://127.0.0.1:${port}/index.html`;

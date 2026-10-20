@@ -12,6 +12,6 @@ A run takes about 10 s in total. 85 words come out to about 24 s at speed 1.0.
 - To try another voice, change the `--voice` flag. Other Kokoro options include `af_bella`, `af_nicole`, `am_michael`, `bf_emma` and `bm_george`. Speed between 0.9 and 1.1 still sounds natural.
 
 ## The fal API key: be careful
-- The key is read from the `FAL_KEY` environment variable or, failing that, from **`~/Desktop/.env_vault`** (the user's vault, a `FAL_KEY=…` line).
+- The key is read from the `FAL_KEY` environment variable or, failing that, from **`~/Desktop/.env_vault`** (a `FAL_KEY=…` line; on a new machine just `export FAL_KEY=…`).
 - It is a paid credential. Never print it, log it, paste it into a film folder, embed it in HTML or JS, or commit it. The scripts only read it at request time.
 - Browser code never calls fal. Voice generation happens once, offline, and the film ships with the finished `voice.wav`.
